@@ -14,17 +14,29 @@ using namespace std;
 class Player
 {
 	//attributes
-	string name;
-	int age;
-	int xp;
+	string name{"Player"};
+	int age{0};
+	int xp{3};
 
 	//methods
 	void talk(string msg);
 	bool is_dead();
 };
 
+class Account
+{
+	//attibutes
+	string name{"Account"};
+	double Blance{0};
+
+	//methods
+	bool deposit(double);
+	bool withdraw(double);
+};
 int main() {
 
+	Account Franks_account;
+	Account Prasads_account;
 	Player Frank;
 	Player Prasad;
 
