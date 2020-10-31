@@ -28,6 +28,12 @@ int main() {
 	Player Frank;
 	Player Prasad;
 
+
+	Player players[] {Frank,Prasad};
+
+	vector <Player> player_vec {Frank};
+	player_vec.push_back(Prasad);//dynamically add Object to vector.
+
 	Player *enemy{nullptr};
 	enemy = new Player;
 
