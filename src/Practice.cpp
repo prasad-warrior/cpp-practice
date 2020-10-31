@@ -13,44 +13,48 @@ using namespace std;
 
 class Player
 {
+public:
 	//attributes
 	string name{"Player"};
 	int age{0};
 	int xp{3};
 
 	//methods
-	void talk(string msg);
+	void talk(string msg){cout << name << " says " << msg << endl;};
 	bool is_dead();
 };
 
 class Account
 {
+public:
 	//attibutes
 	string name{"Account"};
 	double Blance{0};
 
 	//methods
-	bool deposit(double);
-	bool withdraw(double);
+	bool deposit(double bal){Blance += bal; cout << name <<" :blance:"<< Blance << endl;}
+	bool withdraw(double bal){Blance -= bal; cout << name <<" :blance:"<< Blance << endl;}
 };
 int main() {
 
-	Account Franks_account;
-	Account Prasads_account;
 	Player Frank;
 	Player Prasad;
+	Frank.name = "Frank";
+	Frank.age = 40;
+	Frank.xp = 12;
+	Frank.talk("Hi There ");
 
+	Player *enemy = new Player;
 
-	Player players[] {Frank,Prasad};
+	enemy->name = "Enemy";
+	enemy->age = 20;
+	enemy->talk("I am gona kill you ");
 
-	vector <Player> player_vec {Frank};
-	player_vec.push_back(Prasad);//dynamically add Object to vector.
-
-	Player *enemy{nullptr};
-	enemy = new Player;
-
-	delete enemy;
-
+	Account Franks_account;
+	Franks_account.name = "frank";
+	Franks_account.deposit(5000.0);
+	Franks_account.deposit(3000.0);
+	Franks_account.withdraw(3000.0);
 
 
 	return 0;
