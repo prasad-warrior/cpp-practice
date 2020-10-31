@@ -10,22 +10,20 @@
 #include <vector>
 using namespace std;
 
-void swap(int *a,int *b)
+
+void display(vector<string> * v)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+	for(auto str: *v)
+	{
+		cout << str <<endl;
+	}
 }
 int main() {
 
-	int x {100};
-	int y {200};
+//vector of string objects
+	vector <string> names {"prasad","devi","reddy"};
 
-	swap(&x,&y);
-
-	cout << "x:"<< x << "  y:"<<y<< endl;
-
-
+	display(&names);
 
 	return 0;
 }
