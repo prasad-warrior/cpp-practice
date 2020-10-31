@@ -10,20 +10,36 @@
 #include <vector>
 using namespace std;
 
-
-void display(vector<string> * v)
+int *create_array(size_t size, int initial_value = 0)
 {
-	for(auto str: *v)
+	int *int_pointer{nullptr};
+
+	int_pointer = new int[size];//allocates memory with size byes
+
+	for(size_t i {0}; i<size; ++i)
 	{
-		cout << str <<endl;
+		*(int_pointer+i) = initial_value;
 	}
+	return int_pointer;
 }
+void display(int *storage,size_t size)
+{
+	for(size_t i {0}; i<size; ++i)
+	{
+		cout << storage[i] << " ";
+	}
+	cout << endl;
+}
+
 int main() {
+	int *storage {nullptr};
 
-//vector of string objects
-	vector <string> names {"prasad","devi","reddy"};
 
-	display(&names);
+	storage = create_array(100000,20);
+	display(storage,10000);
+
+	delete [] storage;
+
 
 	return 0;
 }
